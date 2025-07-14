@@ -18,9 +18,8 @@ function knightMoves(start, end) {
     return x >= 0 && x < boardSize && y >= 0 && y < boardSize;
   }
 
-  //Use a queue to keep track
-  const queue = [];
-  queue.push(start);
+  //Use a queue to keep track (current, path so far)
+  const queue = [[start, [start]]];
 
   const visited = new Set(); //Remember squares already visited
   visited.add(start.toString()); //Convert to string so the values can be compared
