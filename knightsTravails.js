@@ -12,4 +12,9 @@ function knightMoves(start, end) {
     [-2, 1],
     [-1, 2],
   ];
+
+  // Make sure the move doesn't go off the board
+  function isInsideBoard([x, y]) {
+    return x >= 0 && x < boardSize && y >= 0 && y < boardSize;
+  }
 }
