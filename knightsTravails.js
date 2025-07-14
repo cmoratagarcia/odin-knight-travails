@@ -17,4 +17,8 @@ function knightMoves(start, end) {
   function isInsideBoard([x, y]) {
     return x >= 0 && x < boardSize && y >= 0 && y < boardSize;
   }
+
+  //Use a queue to keep track
+  const queue = [];
+  queue.push(start);
 }
