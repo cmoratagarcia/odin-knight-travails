@@ -21,4 +21,7 @@ function knightMoves(start, end) {
   //Use a queue to keep track
   const queue = [];
   queue.push(start);
+
+  const visited = new Set(); //Remember squares already visited
+  visited.add(start.toString()); //Convert to string so the values can be compared
 }
