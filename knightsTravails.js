@@ -32,6 +32,7 @@ function knightMoves(start, end) {
     if (current[0] === end[0] && current[1] === end[1]) {
       console.log(`You made it in ${path.length - 1} moves! Here's your path:`);
       path.forEach((square) => console.log(`[${square[0]},${square[1]}]`));
+      return path;
     }
 
     // Check all possible moves
