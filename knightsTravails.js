@@ -21,12 +21,13 @@ function knightMoves(start, end) {
   //Use a queue to keep track (current, path so far)
   const queue = [[start, [start]]];
 
+  // Track visited squares (as strings)
+  const visited = new Set();
+  visited.add(start.toString());
+
   while (queue.length > 0) {
     const [current, path] = queue.shift();
   }
-
-  const visited = new Set(); //Remember squares already visited
-  visited.add(start.toString()); //Convert to string so the values can be compared
 
   // When end is found
   if (current[0] === end[0] && current[1] === end[1]) {
