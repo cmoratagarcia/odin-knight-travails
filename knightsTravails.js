@@ -27,22 +27,22 @@ function knightMoves(start, end) {
 
   while (queue.length > 0) {
     const [current, path] = queue.shift();
-  }
 
-  // When end is found
-  if (current[0] === end[0] && current[1] === end[1]) {
-    console.log(`You made it in ${path.length - 1} moves! Here's your path:`);
-    path.forEach((square) => console.log(`[${square[0]},${square[1]}]`));
-  }
+    // When end is found
+    if (current[0] === end[0] && current[1] === end[1]) {
+      console.log(`You made it in ${path.length - 1} moves! Here's your path:`);
+      path.forEach((square) => console.log(`[${square[0]},${square[1]}]`));
+    }
 
-  // Check all possible moves
-  for (let [dx, dy] of knightMoves) {
-    const next = [current[0] + dx, current[1] + dy];
-    const key = next.toString();
+    // Check all possible moves
+    for (let [dx, dy] of knightMoves) {
+      const next = [current[0] + dx, current[1] + dy];
+      const key = next.toString();
 
-    if (isInsideBoard(next) && !visited[key]) {
-      visited.add(key);
-      queue.push([next, [...path, next]]);
+      if (isInsideBoard(next) && !visited[key]) {
+        visited.add(key);
+        queue.push([next, [...path, next]]);
+      }
     }
   }
 }
