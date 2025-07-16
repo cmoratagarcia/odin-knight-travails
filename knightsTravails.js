@@ -35,7 +35,13 @@ function knightMoves(start, end) {
   }
 
   // Check all possible moves
-    for (let [dx, dy] of knightMoves) {
-      const next = [current[0] + dx, current[1] + dy];
-}
+  for (let [dx, dy] of knightMoves) {
+    const next = [current[0] + dx, current[1] + dy];
+    const key = next.toString();
+
+    if (isInsideBoard(next) && !visited[key]) {
+      visited.add(key);
+      queue.push([next, [...path, next]]);
+    }
+  }
 }
