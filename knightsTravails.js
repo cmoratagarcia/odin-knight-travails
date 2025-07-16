@@ -40,7 +40,7 @@ function knightMoves(start, end) {
       const next = [current[0] + dx, current[1] + dy];
       const key = next.toString();
 
-      if (isInsideBoard(next) && !visited[key]) {
+      if (isInsideBoard(next) && !visited.has(key)) {
         visited.add(key);
         queue.push([next, [...path, next]]);
       }
