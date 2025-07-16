@@ -33,4 +33,9 @@ function knightMoves(start, end) {
     console.log(`You made it in ${path.length - 1} moves! Here's your path:`);
     path.forEach((square) => console.log(`[${square[0]},${square[1]}]`));
   }
+
+  // Check all possible moves
+    for (let [dx, dy] of knightMoves) {
+      const next = [current[0] + dx, current[1] + dy];
+}
 }
